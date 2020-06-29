@@ -1,0 +1,22 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: cloud-consumer-feign
+
+eureka:
+  client:
+    register-with-eureka: true
+    service-url:
+      defaultZone: http://localhost:7001/eureka/
+
+#Feign超时设置
+ribbon:
+  ReadTimeout: 5000
+  ConnectTimeout: 5000
+
+#Feign日志打印
+logging:
+  level:
+    com.bcqh.springcloudfeign80.service.Paymentservice: debug
