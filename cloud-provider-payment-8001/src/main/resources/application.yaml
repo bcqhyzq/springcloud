@@ -10,6 +10,11 @@ spring:
     url: jdbc:mysql://60.205.254.33:3306/test01?serverTimezone=UTC&useUnicode=true&characterEncoding=utf-8
     username: test01
     password: pDSpzHeDYeA6hiGD
+  zipkin:
+    base-url: http://localhost:9411
+  sleuth:
+    sampler:
+      probability: 1
 
 mybatis:
   type-aliases-package: com.bcqh.springcloud.pojo
