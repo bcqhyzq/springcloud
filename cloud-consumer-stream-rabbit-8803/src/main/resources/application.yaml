@@ -1,0 +1,29 @@
+server:
+  port: 8803
+
+spring:
+  application:
+    name: cloud-consumer-stream-rabbit
+  cloud:
+    stream:
+      binders: #配置要绑定的RabbitMQ信息
+        defaultRabbit:
+          type: rabbit
+          environment:
+            spring:
+              rabbitmq:
+                host: 60.205.254.33
+                port: 5672
+                username: user
+                password: 123456
+                virtual-host: /bcqh
+      bindings:
+        input:
+          destination: studyExchange
+          content-type: application/json
+          group: bcqhA
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:7001/eureka/
