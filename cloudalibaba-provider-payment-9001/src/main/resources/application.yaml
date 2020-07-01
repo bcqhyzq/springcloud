@@ -1,0 +1,16 @@
+server:
+  port: 9001
+
+spring:
+  application:
+    name: nacos-provider-service
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 60.205.254.33:8848
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
